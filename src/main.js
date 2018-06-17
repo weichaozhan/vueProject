@@ -6,7 +6,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import GlComponent from './globalComponent/index.js'
+
 Vue.config.productionTip = false
+Vue.use(GlComponent)
 
 /* eslint-disable no-new */
 const vueGlobal = new Vue({

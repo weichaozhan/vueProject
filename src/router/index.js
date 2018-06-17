@@ -38,14 +38,7 @@ const router = new Router({
 
 // 全局导航前置守卫，页面跳转前的处理
 router.beforeEach((to, from, next) => {
-  // router.go('/HelloWorld')   
-  console.log(to)
-  if (to.name !== 'home') {
-    router.go('/')
-    next(false)
-  } else {
-    next()
-  }
+  next()
 })
 
 export default router

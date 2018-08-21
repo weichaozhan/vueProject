@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const HelloWorld = resolve => require(['@/components/HelloWorld'], resolve)
-const Child = resolve => require(['@/components/Child'], resolve)
+const WelcomePage = resolve => require(['@/components/WelcomePage'], resolve)
+// const HelloWorld = resolve => require(['@/components/HelloWorld'], resolve)
+// const Child = resolve => require(['@/components/Child'], resolve)
+const Canvas = resolve => require(['@/components/CanvasStudy'], resolve)
 const NotFound = resolve => require(['@/components/NotFound'], resolve)
 
 Vue.use(Router)
@@ -11,23 +13,26 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HelloWorld
+      component: WelcomePage
     },
     {
-      path: '/HelloWorld',
-      component: HelloWorld,
-      // children: [
-      //   {
-      //     path: '',
-      //     component: Child
-      //   }
-      // ]      
+      path: '/Canvas',
+      component: Canvas
     },
-    {
-      path: '/HelloWorld/a',
-      component: Child,
-    },
+    // {
+    //   path: '/HelloWorld',
+    //   component: HelloWorld,
+    //   // children: [
+    //   //   {
+    //   //     path: '',
+    //   //     component: Child
+    //   //   }
+    //   // ]      
+    // },
+    // {
+    //   path: '/HelloWorld/a',
+    //   component: Child,
+    // },
     {
       path: '*',
       meta: { requireAuth: true },
